@@ -3,13 +3,21 @@
 import numpy as np
 
 
-def fd5p():
+def fd5p(m, n):
+    # Eq.: ∇^2(u) = −(π^2 + 1).sin(πx).sin(y)
+    """
+    a = 0
+    b = 1
+    c = 0
+    d = np.pi
+    def funF(x,y)
+        return -(np.pi**2 +1)*np.sin(np.pi*x)*np.sin(y)
+    def funG(x,y)
+        return 0
+    """
     print(np.zeros(1))
     """
-    a = 0; b = 1; c = 0; d = pi;
-    funF = @(x,y) sin(pi*x)+cos(2*pi*y);
-    funG = @(x,y) zeros(size(x)).*zeros(size(y));
-    domain = [a,b,c,d];
+    domain = [a,b,c,d]
     m = 10;
     n = 30;
     hx = (b-a)/(m+1);
@@ -62,3 +70,7 @@ def fd5p():
 
     solution = np.linalg.solve(a,b)
     """
+    return 1, 2
+
+
+fd5p(3, 3)
