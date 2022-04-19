@@ -6,7 +6,7 @@
 ### Instructor: Dr. Xu Zhang
 ### Textbook: Randall J. LeVeque. Finite Difference Methods for Ordinary and Partial Differential Equations. SIAM, 2007
 
-
+To run the project locally:
 <!-- Code Blocks -->
 ```bash
   git clone https://github.com/zomorodiyan/MATH5543
