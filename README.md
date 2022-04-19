@@ -15,4 +15,5 @@
   flake8 src
 ```
 ![Tests](https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject/actions/workflows/tests.yml/badge.svg)
-project structure template: https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject
+
+#### project structure template: https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject
