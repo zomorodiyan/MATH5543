@@ -14,5 +14,5 @@
   mypy src
   flake8 src
 ```
-project structure template from:
 ![Tests](https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject/actions/workflows/tests.yml/badge.svg)
+project structure template: https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject
