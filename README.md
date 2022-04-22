@@ -1,4 +1,4 @@
-# MATH5543 HW2 
+# MATH5543 HW2
 
 ![Tests](https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject/actions/workflows/tests.yml/badge.svg)
 
@@ -17,10 +17,13 @@ To run the project locally:
   mypy src
   flake8 src
 ```
-#### 1.a)  fdm2Dmatrix and fdm2Drhs are defined in src/fdm/fd5p.py
-#### 1.b)
+### 1.a)
+#### fdm2Dmatrix and fdm2Drhs are defined in src/fdm/fd5p.py
+### 1.b)
 ![Alt text](./Plots/1b_contour.png?raw=true "Title")
-
+### 1.c)
+![Alt text](./Plots/1c_error.png?raw=true "Title")
+by comparing the slopes we conclude that it is first order
 
 
 #### project structure template: https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject

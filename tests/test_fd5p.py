@@ -10,9 +10,7 @@ class TestHomework2(unittest.TestCase):
         nxz = np.array([10, 20, 40])
         dxz = np.array([1 / 10, 1 / 20, 1 / 40])
         dxz2 = np.array([1 / 100, 1 / 400, 1 / 1600])
-        # for ik,(nx,ny) in enumerate([[10, 30],[20, 60],[40, 120],[80,240]]):
-        # for ik,(nx,ny) in enumerate([[10, 30],[20, 60],[40, 120]]):
-        for ik, (nx, ny) in enumerate([[10, 30]]):
+        for ik, (nx, ny) in enumerate([[10, 30], [20, 60], [40, 120]]):
             print("(nx, ny) =", (nx, ny))
             # Equation: ∇^2(u) = −(π^2 + 1).sin(πx).sin(y)
             def funF(x, y):
@@ -55,6 +53,14 @@ class TestHomework2(unittest.TestCase):
                 if error > err[ik]:
                     err[ik] = error
             print("err", err)
+
+            # problem 1-b
+            if ik == 0:
+                plt.figure()
+                plt.contourf(xv, yv, field)
+                plt.savefig("./Plots/1b_contour.png")
+
+            # problem 1-c
             if ik == 2:
                 plt.figure()
                 plt.plot(nxz, err)
@@ -62,14 +68,8 @@ class TestHomework2(unittest.TestCase):
                 plt.plot(nxz, dxz2)
                 plt.xscale("log")
                 plt.yscale("log")
-                plt.legend()
-                plt.savefig("./Plots/err.png")
-
-            print(" ---- plotting ...  ---- ")
-            plt.figure()
-            plt.contourf(xv, yv, field)
-            plt.savefig("./Plots/1b_contour.png")
-            print(" ---- plotting done ---- ")
+                plt.legend(["error", "h", "h^2"])
+                plt.savefig("./Plots/1c_error.png")
 
 
 if __name__ == "__main__":
