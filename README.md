@@ -1,9 +1,12 @@
-# MATH5543 HW2 ![Tests](https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject/actions/workflows/tests.yml/badge.svg)
-## Second Homework for MATH5543 Course Spring 2022, Oklahoma State University
+# MATH5543 HW2 
+
+![Tests](https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject/actions/workflows/tests.yml/badge.svg)
+
+## Homework 2, MATH5543 Course Spring 2022, Oklahoma State University
 ### Instructor: Dr. Xu Zhang
 ### Textbook: Randall J. LeVeque. Finite Difference Methods for Ordinary and Partial Differential Equations. SIAM, 2007
 
-
+To run the project locally:
 <!-- Code Blocks -->
 ```bash
   git clone https://github.com/zomorodiyan/MATH5543
