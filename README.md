@@ -23,7 +23,7 @@ To run the project locally:
 ![Alt text](./Plots/1b_contour.png?raw=true "Title")
 ### 1.c)
 ![Alt text](./Plots/1c_error.png?raw=true "Title")
-by comparing the slopes we conclude that it is first order
+#### Comparing the slopes concludes: it is first order
 
 
 #### project structure template: https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject
