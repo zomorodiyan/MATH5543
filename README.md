@@ -14,6 +14,10 @@
   mypy src
   flake8 src
 ```
+#### 1.a)  fdm2Dmatrix and fdm2Drhs are defined in src/fdm/fd5p.py
+#### 1.b)
+![Alt text](./Plots/1b_contour.png?raw=true "Title")
+
 
 
 #### project structure template: https://github.com/mCodingLLC/SlapThatLikeButton-TestingStarterProject
