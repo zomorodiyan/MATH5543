@@ -7,11 +7,12 @@ import numpy as np
 class TestHomework2(unittest.TestCase):
     def test_problem_1(self):
         err = np.zeros(3)
-        nxz = np.array([10, 20, 40])
-        dxz = np.array([1 / 10, 1 / 20, 1 / 40])
-        dxz2 = np.array([1 / 100, 1 / 400, 1 / 1600])
+        nxz = np.array([10.0, 20.0, 40.0])
+        dxz = nxz ** -1
+        dxz2 = dxz ** 2
+        # dxz = np.array([1 / 10, 1 / 20, 1 / 40])
+        # dxz2 = np.array([1 / 100, 1 / 400, 1 / 1600])
         for ik, (nx, ny) in enumerate([[10, 30], [20, 60], [40, 120]]):
-            print("(nx, ny) =", (nx, ny))
             # Equation: ∇^2(u) = −(π^2 + 1).sin(πx).sin(y)
             def funF(x, y):
                 return -(np.pi ** 2 + 1) * np.sin(np.pi * x) * np.sin(y)
@@ -26,7 +27,6 @@ class TestHomework2(unittest.TestCase):
             dy = (d - c) / (ny + 1)
 
             # coefficient matrix
-            print("coefficient matrix")
             A = fdm2Dmatrix(nx=nx, ny=ny, dx=dx, dy=dy)
             assert type(A) is np.ndarray, "fdm2Dmatrix output is not np.ndarray"
 
@@ -35,12 +35,9 @@ class TestHomework2(unittest.TestCase):
             xv, yv = np.meshgrid(x, y)
 
             # right hand side
-            print("right hand side")
             B = fdm2Drhs(funF=funF, funG=funG, xv=xv, yv=yv, nx=nx, dx=dx, ny=ny, dy=dy)
             assert type(B) is np.ndarray, "fdm2Drhs output is not np.ndarray"
-            print("solving...")
             sol = np.linalg.solve(A, B)
-            print("done!")
 
             # populate 2D field
             field = np.zeros_like(xv)  # b.c. already satisfied (=0)
@@ -59,6 +56,7 @@ class TestHomework2(unittest.TestCase):
                 plt.figure()
                 plt.contourf(xv, yv, field)
                 plt.savefig("./Plots/1b_contour.png")
+                plt.show()
 
             # problem 1-c
             if ik == 2:
@@ -70,6 +68,7 @@ class TestHomework2(unittest.TestCase):
                 plt.yscale("log")
                 plt.legend(["error", "h", "h^2"])
                 plt.savefig("./Plots/1c_error.png")
+                plt.show()
 
 
 if __name__ == "__main__":
