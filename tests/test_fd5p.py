@@ -10,8 +10,6 @@ class TestHomework2(unittest.TestCase):
         nxz = np.array([10.0, 20.0, 40.0])
         dxz = nxz ** -1
         dxz2 = dxz ** 2
-        # dxz = np.array([1 / 10, 1 / 20, 1 / 40])
-        # dxz2 = np.array([1 / 100, 1 / 400, 1 / 1600])
         for ik, (nx, ny) in enumerate([[10, 30], [20, 60], [40, 120]]):
             # Equation: ∇^2(u) = −(π^2 + 1).sin(πx).sin(y)
             def funF(x, y):
