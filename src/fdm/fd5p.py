@@ -3,6 +3,15 @@
 import numpy as np
 
 
+def trapezoidal(fun, Dfun, a, b, U0, N):
+    x = np.linspace(a, b, N)
+    dx = abs(a - b) / (N - 1)
+    y = np.full_like(x, U0)
+    for i in range(N - 1):
+        y[i + 1] = y[i] + dx / 2 * (fun(y[i]) + fun(y[i] + dx * fun(y[i])))
+    return x, y
+
+
 def fdm2Drhs(funF, funG, xv, yv, nx, dx, ny, dy):
     xc = 1 / (dy) ** 2
     yc = 1 / (dx) ** 2

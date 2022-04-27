@@ -1,11 +1,13 @@
 import unittest
 from fdm.fd5p import fdm2Dmatrix, fdm2Drhs
+from fdm.fd5p import trapezoidal
 import matplotlib.pyplot as plt
 import numpy as np
 
 
 class TestHomework2(unittest.TestCase):
     def test_problem_1(self):
+        # problem_1 was tested after coding (not TDD)
         err = np.zeros(3)
         nxz = np.array([10.0, 20.0, 40.0])
         dxz = nxz ** -1
@@ -53,8 +55,8 @@ class TestHomework2(unittest.TestCase):
             if ik == 0:
                 plt.figure()
                 plt.contourf(xv, yv, field)
-                plt.savefig("./Plots/1b_contour.png")
-                plt.show()
+                # plt.savefig("./Plots/1b_contour.png")
+                # plt.show()
 
             # problem 1-c
             if ik == 2:
@@ -65,8 +67,26 @@ class TestHomework2(unittest.TestCase):
                 plt.xscale("log")
                 plt.yscale("log")
                 plt.legend(["error", "h", "h^2"])
-                plt.savefig("./Plots/1c_error.png")
-                plt.show()
+                # plt.savefig("./Plots/1c_error.png")
+                # plt.show()
+
+    def test_problem_2(self):
+        # problem_2 was tested after coding (not TDD)
+        a = 0
+        b = 15
+        U0 = 1
+        N = 100
+        Dfun = fun = 1
+
+        def Dfun(u):
+            return u ** 2 + 1
+
+        def fun(u):
+            return 2 * u
+
+        U, t = trapezoidal(fun, Dfun, a, b, U0, N)
+        assert type(U) is np.ndarray, 'fdm2Dmatrix output, "U" is not np.ndarray'
+        assert type(t) is np.ndarray, 'fdm2Dmatrix output, "t" is not np.ndarray'
 
 
 if __name__ == "__main__":
